@@ -1,27 +1,84 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-<title>Pharmacy Shipment Screen</title>
+    <title>Pharmacy Shipment Screen</title>
 </head>
+
 <body>
 
-<h1>Epic Willow - Shipment Ready</h1>
+<!-- SCREEN 1 -->
+<div id="shipmentReadyScreen">
 
-<p><b>Patient:</b> John Smith</p>
+    <h1>Epic Willow - Shipment Ready</h1>
 
-<p><b>Address:</b>
-100 Main St,
-Columbus OH 43215
-</p>
+    <p><b>Patient:</b> John Smith</p>
 
-<p><b>Medication:</b> Eliquis 5mg</p>
+    <p><b>Address:</b>
+        100 Main St,
+        Columbus OH 43215
+    </p>
 
-<p><b>Weight:</b> 3.2 lbs</p>
+    <p><b>Medication:</b> Eliquis 5mg</p>
 
-<p><b>Priority:</b> Standard</p>
+    <p><b>Weight:</b> 3.2 lbs</p>
 
-<button>Generate Label</button>
+    <p><b>Priority:</b> Standard</p>
+
+    <button id="generateLabelBtn" type="button">
+        Generate Label
+    </button>
+
+</div>
+
+
+<!-- SCREEN 2 -->
+<div id="labelGeneratedScreen" style="display:none;">
+
+    <h1>OptiFreight - Shipping Label Generated</h1>
+
+    <p><strong>Patient:</strong> John Smith</p>
+
+    <p><strong>Address:</strong>
+        100 Main St, Columbus OH 43215
+    </p>
+
+    <p><strong>Weight:</strong> 3.2 lbs</p>
+
+    <p><strong>Selected Carrier:</strong> UPS Ground</p>
+
+    <p><strong>Shipping Cost:</strong> $8.95</p>
+
+    <p><strong>Savings versus FedEx:</strong> $3.50</p>
+
+    <p><strong>Tracking Number:</strong>
+        1Z999AA10123456784
+    </p>
+
+    <p><strong>Label ID:</strong>
+        LBL-RX1001-001
+    </p>
+
+    <p><strong>Status:</strong>
+        Ready to Print
+    </p>
+
+</div>
+
+
+<script>
+
+document.getElementById("generateLabelBtn")
+.addEventListener("click", function () {
+
+    document.getElementById("shipmentReadyScreen")
+        .style.display = "none";
+
+    document.getElementById("labelGeneratedScreen")
+        .style.display = "block";
+
+});
+
+</script>
 
 </body>
 </html>
